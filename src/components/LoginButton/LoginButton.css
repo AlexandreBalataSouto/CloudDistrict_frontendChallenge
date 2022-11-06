@@ -1,0 +1,16 @@
+.LoginButton {
+  margin-top: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  border: 2px solid var(--defaultColor);
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--mainBackgroundColor);
+  color: var(--defaultTextColor);
+  font-size: 1.4em;
+  transition: var(--transitionDefault);
+}
+
+.LoginButton:hover {
+  background-color: var(--defaultColor);
+  color: var(--mainBackgroundColor);
+}

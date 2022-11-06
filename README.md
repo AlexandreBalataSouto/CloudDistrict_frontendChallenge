@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+Estructura del proyecto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-Index
+--App
+---Home
+----LoginButton
+---Profile
+----LogoutButton
+----UserList
+-----Modal
+---NotFound
 
-## Available Scripts
+Resumen de la aplicación:
 
-In the project directory, you can run:
+La primera pantalla que veremos será la de bienvenida, aquí veremos un botón que nos llevará a la pantalla de login donde podremos logearnos mediante Google o con una cuenta propia, una vez hecho esto el botón de login se cambiará por otro botón para acceder a la pagina "Profile", si tratamos de acceder a esta pagina sin habernos autentificado previamente la app nos redigirá a la pantalla de login ya mencionada. Para el sistema de login utilizo auth0 (https://auth0.com/) que me permite generar la pagina de login, obtener datos del usuario que se ha logeado y otras funcionalidades como por ejemplo redirigir a una pagina en caso de que el usuario no se haya autenticado.
 
-### `npm start`
+En "Profile" veremos el nombre, el email y el avatar del usuario que se ha conectado, ademas dispondremos de un botón para logout, mas abajo se encuentra el listado de 5 en 5 usuarios obtenidos de la API https://reqres.in. Abajao del todo tenemos la paginación para poder ver a los usuarios, cada usuario tiene un botón "Check" que abre un "Modal" que permite ver: First name, Last name, Email y su Avatar. He añadido un botón para crear y editar usuarios, sin embargo he observado que no hay correalación entre los usuarios que se obtienen y los que se crean ya que cuando obtengo los usuarios tengo nombre,email, avatar, etc pero a la hora de crear un usuario solo me pide un "name" y un "job" pero con el fin de realizar la prueba si creamos un usuario se nos abre el "Modal" y ahí deberemos rellenar los campos, una vez hecho nos aparecerá un alert indicando el id del nuevo usuario y el status 201 que indica que se ha podido crear exisitosamente (también hay console.log() para mas información); de la misma forma si pulsamos "Edit" con alguno de los usuarios nos aparecerá un formulario similar pero con los campos rellenados (job esta rellenado por defecto con el valor "Job"), si modificamos los campos y aceptamos nuevamente muestra un alert y console.log() con los datos y el status 200.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Finalmente he agregado una pagina de Not Found por si accedemos a una pagina que no exista.

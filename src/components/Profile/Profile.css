@@ -1,0 +1,32 @@
+.Profile {
+  border-radius: 30px;
+  background-color: var(--mainBackgroundColor);
+  font-size: 1.2em;
+}
+
+.info {
+  padding: 1rem;
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .info {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.info_profile img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 540px) {
+  .Profile {
+    border-radius: 0px;
+    font-size: 1em;
+    text-align: center;
+  }
+}

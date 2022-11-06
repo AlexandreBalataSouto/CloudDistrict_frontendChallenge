@@ -1,0 +1,115 @@
+.UserList {
+  padding: 1rem;
+}
+
+.createUser {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+}
+.createUser button {
+  padding: 1rem;
+  border: 2px solid var(--createUserButtonBackground);
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--mainBackgroundColor);
+  color: var(--defaultTextColor);
+  font-size: 1em;
+  transition: var(--transitionDefault);
+}
+
+.createUser button:hover {
+  background-color: var(--createUserButtonBackground);
+  color: var(--mainBackgroundColor);
+}
+
+@media screen and (min-width: 768px) {
+  .createUser {
+    grid-template-columns: 10rem;
+  }
+}
+
+table {
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+table thead tr th {
+  padding-left: 1rem;
+}
+
+table tbody tr td {
+  padding-top: 1rem;
+}
+
+.table_img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 100%;
+  border: 2px solid var(--defaultColor);
+}
+
+.table_actions {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.table_actions button {
+  margin: 0.2rem;
+  padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+  color: black;
+  border: 2px solid var(--defaultColor);
+  border-radius: 20px;
+  float: left;
+  background-color: var(--mainBackgroundColor);
+  text-align: center;
+  transition: 0.4s;
+}
+
+.table_actions button:hover {
+  background-color: var(--defaultColor);
+  color: var(--mainBackgroundColor);
+}
+
+.pagination {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  color: black;
+  float: left;
+  padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+  margin-left: 0.4rem;
+  border: 2px solid var(--defaultColor);
+  border-radius: 20px;
+  background-color: var(--mainBackgroundColor);
+  text-align: center;
+  transition: 0.4s;
+}
+
+.pagination .active {
+  background-color: var(--ligthDefaultColor);
+  border: 2px solid var(--ligthDefaultColor);
+  color: var(--mainBackgroundColor);
+}
+
+.pagination button:hover {
+  background-color: var(--defaultColor);
+  border: 2px solid var(--defaultColor);
+  color: var(--mainBackgroundColor);
+}
+
+@media screen and (max-width: 405px) {
+  .table_actions {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 295px) {
+  .table_actions button {
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+  }
+}
